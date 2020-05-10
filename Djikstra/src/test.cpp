@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 		std::cout<< it.first->GetLabel()<<std::endl<< it.second<<std::endl;
 	}
 	*/
-    Graph graph;
+
+	Graph graph;
 	std::cout<<"Adding nodes to graph"<<std::endl;
 	std::cout<<graph.AddNode(1, "node1")<<std::endl;
 	std::cout<<graph.AddNode(2, "node2")<<std::endl;
@@ -33,8 +34,5 @@ int main(int argc, char *argv[])
 	std::cout<<graph.AddNodeConnection(1, {3,4.0})<<std::endl;
 	std::cout<<graph.AddNodeConnection(1, {4,2.0})<<std::endl;
 	return 0;
-	
 
-	
-	
 }

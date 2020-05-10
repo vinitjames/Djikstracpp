@@ -33,3 +33,4 @@ private:
 
 
 #endif /* GRAPH_H */
+// TODO: Add destructor for deallocating nodes and add node getter
