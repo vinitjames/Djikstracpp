@@ -8,26 +8,26 @@
 
 class Graph {
 public:
-	Graph();
-	~Graph();
+	Graph(){};
+	~Graph(){};
 	inline const std::string GetName() const { return m_Name;}
-	bool AddNode(std::string &name);
-	bool DeleteNode(std::string &name);
+	bool AddNode(unsigned int id, const std::string &name);
+	bool DeleteNode(unsigned int id);
 
-	bool AddNodeConnection(Node* node, std::pair<const Node*,float> neighbor);
+	bool AddNodeConnection(Node* node, const std::pair<const Node*,float>& neighbor);
+	bool AddNodeConnection(unsigned int id, const std::pair<unsigned int ,float>& neighbor);
 	bool AddNodeConnection(Node* node,
 						   std::unordered_map<const Node*,float>& neighbors);
-	bool AddNodeConnection(const std::string& node_name,
-						   std::unordered_map<const std::string,float>& neighbors);
+	bool AddNodeConnection(unsigned int id,
+						   std::unordered_map<unsigned int, float>& neighbors);
 
-	bool NodeExists(const std::string& node_name) const;
+	bool NodeExists(unsigned int id) const;
 	bool NodeExists(const Node* node) const ;
 	
 private:
-	
 	std::string m_Name;
-	std::unordered_map<std::string, Node*> m_Nodes;
-	Node* GetNode(const std::string) const;	
+	std::unordered_map< unsigned int, Node*> m_Nodes;
+	Node* GetNode(unsigned int id) const;	
 
 };
 
